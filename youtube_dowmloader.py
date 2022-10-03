@@ -3,8 +3,9 @@ import re
 from unicodedata import name
 from pip import main
 from pytube import Playlist
-playlist = Playlist('https://www.youtube.com/playlist?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3')   
-DOWNLOAD_DIR = f'D:\programming\Data_AI\{playlist.title}'
+playlist_url = 'https://www.youtube.com/playlist?list=PLJ70FsLLPuxOx-RWCjX7OtHzpeE_rPsMc'
+playlist = Playlist(playlist_url)   
+DOWNLOAD_DIR = f'H:\Download - HDD\{playlist.title}'
 os.makedirs(DOWNLOAD_DIR)
 playlist._video_regex = re.compile(r"\"url\":\"(/watch\?v=[\w-]*)")    
 print(len(playlist.video_urls))    
